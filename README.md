@@ -6,37 +6,28 @@ Convert a simple bash script into common workflow language workflow.
 
 Type a command in a prompt window (DIR=directory to install).
 
-> git clone https://github.com/moirai2/bash2cwl.git DIR
-
+```
+  git clone https://github.com/moirai2/bash2cwl.git DIR
+```
 OR click "Clone of download" and click.
 
 ## usage
 
-> perl bash2cwl.pl "echo 'Hello World'>output.txt"
+```
+perl bash2cwl.pl "echo 'Hello World'>output.txt"
+```
 
 * Above command creates these files:
-  - bash.cwl
-  - bash.yml
-  - cwl/step1.cwl
-* bash.cwl
->  cwlVersion: v1.0
->  class: Workflow
->  inputs:
->    param1:
->      type: string
->    param2:
->      type: string
->  outputs:
->    result1:
->      type: File
->      outputSource: step1/output1
->  steps:
->    step1:
->      run: cwl/step1.cwl
->      in:
->        input1: param1
->        input2: param2
->      out: [output1]
+  - [bash.cwl](https://github.com/moirai2/bash2cwl/helloworld/bash.cwl)
+  - [bash.yml](https://github.com/moirai2/bash2cwl/helloworld/bash.yml)
+  - [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/helloworld/cwl/step1.cwl)
+
+```
+cwltool bash.cwl bash.yml
+```
+
+* Above command creates these files:
+  - [bash.cwl](https://github.com/moirai2/bash2cwl/helloworld/output.txt)
 
 ## Author
 
