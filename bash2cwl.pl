@@ -377,6 +377,7 @@ sub workflow{
   my $exports={};
   my $variables={};
   my $stepindex=1;
+  my $resultindex=1;
   foreach my $command(@{$commands}){
     if($command->{"command"}eq"export"){
       foreach my $input(@{$command->{"input"}}){if($input=~/(\S+)\=(\S+)/){$exports->{$1}=$2;}}
@@ -415,15 +416,16 @@ sub workflow{
       push(@inputLines,"    type: $type");
       $parameters->{$name}=$hash;
     }
-    my $outputindex=1;
     @keys=sort{$a cmp $b}keys(%{$outs});
+    my $outputindex=1;
     foreach my $key(@keys){
       my $hash=$outs->{$key};
       my $type=$hash->{"type"};
       my $value=$hash->{"value"};
       if(!exists($outputs->{$basename})){$outputs->{$basename}={};}
-      my $name="result$outputindex";
+      my $name="result$resultindex";
       if($value=~/^\$stdout(\d+)/){$variables->{"\$stdin".($1+1)}="$basename/output$outputindex";}
+      $outputindex++;
       $outputs->{$basename}->{$key}=$value;
       $tmps->{$value}="$basename/$key";
       if(($type eq"File"||$type eq"stdout")&&!exists($outputHash->{$value})){next;}
@@ -431,7 +433,7 @@ sub workflow{
       push(@outputLines,"  $name:");
       push(@outputLines,"    type: $type");
       push(@outputLines,"    outputSource: $basename/$key");
-      $outputindex++;
+      $resultindex++;
     }
     while(my($name,$hash)=each(%{$outs})){
       my $value=$hash->{"value"};

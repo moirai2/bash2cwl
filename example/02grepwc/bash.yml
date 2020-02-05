@@ -1,0 +1,6 @@
+param1: Hello World
+param2: stdout1.txt
+param3: Hello
+param4: stdout2.txt
+param5: true
+param6: wcount.txt
