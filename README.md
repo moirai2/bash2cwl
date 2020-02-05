@@ -26,13 +26,12 @@ perl bash2cwl.pl "echo 'Hello World'>output.txt"
 cwltool bash.cwl bash.yml
 ```
 
-* Above command creates these files:
+* Above command runs cwl workflow and creates these files:
   - [output.txt](https://github.com/moirai2/bash2cwl/blob/master/example/01helloworld/output.txt)
 
 ```
 perl bash2cwl.pl "echo 'Hello World'| grep 'Hello'|wc -l > wcount.txt"
 ```
-
 
 * Above command creates these files:
   - [bash.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/bash.cwl)
@@ -41,11 +40,11 @@ perl bash2cwl.pl "echo 'Hello World'| grep 'Hello'|wc -l > wcount.txt"
   - [cwl/step2.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/cwl/step2.cwl)
   - [cwl/step3.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/cwl/step3.cwl)
 
-  ```
-  cwltool bash.cwl bash.yml
-  ```
+```
+cwltool bash.cwl bash.yml
+```
 
-* Above command creates these files:
+* Above command runs cwl workflow and creates these files:
   - [wcount.txt](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/wcount.txt)
   - [stdout1.txt](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/stdout1.txt)
   - [stdout2.txt](https://github.com/moirai2/bash2cwl/blob/master/example/02grepwc/stdout2.txt)
