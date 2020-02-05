@@ -57,7 +57,7 @@ Above command runs cwl workflow and creates these files:
 ### example3
 
 ```
-perl bash2cwl.pl "string='Hello World'" "echo $string|wc>count.txt"
+perl bash2cwl.pl "string='Hello World'" "echo \$string|wc>count.txt"
 ```
 
 Above command creates these files:
@@ -73,6 +73,38 @@ cwltool bash.cwl bash.yml
 Above command runs cwl workflow and creates these files:
 - [stdout1.txt](https://github.com/moirai2/bash2cwl/blob/master/example/03variable/stdout1.txt)
 - [count.txt](https://github.com/moirai2/bash2cwl/blob/master/example/03variable/count.txt)
+
+### example4
+
+```
+perl bash2cwl.pl bash.sh
+```
+
+Above command creates these files:
+- [bash.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/bash.cwl)
+- [bash.yml](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/bash.yml)
+- [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step1.cwl)
+- [cwl/step2.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step2.cwl)
+- [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step3.cwl)
+- [cwl/step2.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step4.cwl)
+- [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step5.cwl)
+- [cwl/step2.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step6.cwl)
+- [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step7.cwl)
+- [cwl/step2.cwl](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/cwl/step8.cwl)
+
+```
+cwltool bash.cwl bash.yml
+```
+
+Above command runs cwl workflow and creates these files:
+- [count.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/count.txt)
+- [file1.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/file1.txt)
+- [file2.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/file2.txt)
+- [goodbye.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/goodbye.txt)
+- [hello.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/hello.txt)
+- [stdout3.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/stdout3.txt)
+- [stdout5.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/stdout5.txt)
+- [stdout7.txt](https://github.com/moirai2/bash2cwl/blob/master/example/04bash/stdout7.txt)
 
 ## Licence
 
