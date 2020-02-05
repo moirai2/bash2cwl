@@ -18,16 +18,16 @@ perl bash2cwl.pl "echo 'Hello World'>output.txt"
 ```
 
 * Above command creates these files:
-  - [bash.cwl](https://github.com/moirai2/bash2cwl/helloworld/bash.cwl)
-  - [bash.yml](https://github.com/moirai2/bash2cwl/helloworld/bash.yml)
-  - [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/helloworld/cwl/step1.cwl)
+  - [bash.cwl](https://github.com/moirai2/bash2cwl/blob/master/helloworld/bash.cwl)
+  - [bash.yml](https://github.com/moirai2/bash2cwl/blob/master/helloworld/bash.yml)
+  - [cwl/step1.cwl](https://github.com/moirai2/bash2cwl/blob/master/helloworld/cwl/step1.cwl)
 
 ```
 cwltool bash.cwl bash.yml
 ```
 
 * Above command creates these files:
-  - [bash.cwl](https://github.com/moirai2/bash2cwl/helloworld/output.txt)
+  - [output.txt](https://github.com/moirai2/bash2cwl/blob/master/helloworld/output.txt)
 
 ## Author
 
